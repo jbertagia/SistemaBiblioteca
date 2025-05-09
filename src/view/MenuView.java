@@ -24,32 +24,15 @@ public class MenuView {
             sc.nextLine();
 
             switch (opcao) {
-                case 1:
-                    cadastrarLivro();
-                    break;
-                case 2:
-                    pesquisarLivro();
-                    break;
-                case 3:
-                    cadastrarUsuario();
-                    break;
-                case 4:
-                    realizarEmprestimo();
-                    break;
-                case 5:
-                    registrarDevolucao();
-                    break;
-                case 6:
-                    relatorios();
-                    break;
-                case 7:
-                    listarTodosLivros();
-                    break;
-                case 0:
-                    System.out.println("Saindo...");
-                    break;
-                default:
-                    System.out.println("Opção inválida");
+                case 1: cadastrarLivro(); break;
+                case 2: pesquisarLivro(); break;
+                case 3: cadastrarUsuario(); break;
+                case 4: realizarEmprestimo(); break;
+                case 5: registrarDevolucao(); break;
+                case 6: relatorios(); break;
+                case 7: listarTodosLivros(); break;
+                case 0: System.out.println("Saindo..."); break;
+                default: System.out.println("Opção inválida");
             }
         } while (opcao != 0);
     }
@@ -75,8 +58,8 @@ public class MenuView {
         System.out.print("Categoria: ");
         String cat = sc.nextLine();
 
-        Livro livroCompleto = new Livro(cod, titulo, autor, ano, ex, cat);
-        Biblioteca.adicionarLivro(livroCompleto);
+        Livro livro = new Livro(cod, titulo, autor, ano, ex, cat);
+        Biblioteca.adicionarCadastravel(livro);
         System.out.println("Livro cadastrado com sucesso!");
     }
 
@@ -92,7 +75,8 @@ public class MenuView {
         System.out.print("Email: ");
         String email = sc.nextLine();
 
-        Biblioteca.adicionarUsuario(new Usuario(id, nome, tel, end, email));
+        Usuario usuario = new Usuario(id, nome, tel, end, email);
+        Biblioteca.adicionarCadastravel(usuario);
         System.out.println("Usuário cadastrado com sucesso!");
     }
 
