@@ -17,17 +17,17 @@ public class PreCarga {
         Usuario u3 = new Usuario("333", "Joana", "97777-7777", "Rua C", "joana@email.com");
         Usuario u4 = new Usuario("444", "Felipe", "96666-6666", "Rua D", "felipe@email.com");
 
-        Biblioteca.adicionarLivro(l1);
-        Biblioteca.adicionarLivro(l2);
-        Biblioteca.adicionarLivro(l3);
-        Biblioteca.adicionarLivro(l4);
-        Biblioteca.adicionarLivro(l5);
-        Biblioteca.adicionarLivro(l6);
+        Biblioteca.adicionarCadastravel(l1);
+        Biblioteca.adicionarCadastravel(l2);
+        Biblioteca.adicionarCadastravel(l3);
+        Biblioteca.adicionarCadastravel(l4);
+        Biblioteca.adicionarCadastravel(l5);
+        Biblioteca.adicionarCadastravel(l6);
 
-        Biblioteca.adicionarUsuario(u1);
-        Biblioteca.adicionarUsuario(u2);
-        Biblioteca.adicionarUsuario(u3);
-        Biblioteca.adicionarUsuario(u4);
+        Biblioteca.adicionarCadastravel(u1);
+        Biblioteca.adicionarCadastravel(u2);
+        Biblioteca.adicionarCadastravel(u3);
+        Biblioteca.adicionarCadastravel(u4);
 
         try {
             l1.emprestar();
@@ -36,12 +36,12 @@ public class PreCarga {
 
             l2.emprestar();
             Emprestimo e2 = new Emprestimo(u2, l2, LocalDate.now().minusDays(10), LocalDate.now().minusDays(3));
-            e2.registrarDevolucao(); // atraso de 3 dias
+            e2.registrarDevolucao();
             Biblioteca.registrarEmprestimo(e2);
 
             l3.emprestar();
             Emprestimo e3 = new Emprestimo(u3, l3, LocalDate.now().minusDays(14), LocalDate.now().minusDays(7));
-            e3.registrarDevolucao(); // atraso de 7 dias
+            e3.registrarDevolucao();
             Biblioteca.registrarEmprestimo(e3);
 
             l4.emprestar();
