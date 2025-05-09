@@ -1,6 +1,6 @@
 package model;
 
-public class Usuario {
+public class Usuario implements Cadastravel {
     private String id;
     private String nome;
     private String telefone;
@@ -15,9 +15,31 @@ public class Usuario {
         this.email = email;
     }
 
-    public String getId() { return id; }
-    public String getNome() { return nome; }
-    public String getTelefone() { return telefone; }
-    public String getEndereco() { return endereco; }
-    public String getEmail() { return email; }
+    @Override
+    public String getId() {
+        return this.id;
+    }
+
+    @Override
+    public String getResumo() {
+        return String.format("Usuário: %s - Telefone: %s", nome, telefone);
+    }
+    
+    public String getNome() {
+        return nome;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+
 }
